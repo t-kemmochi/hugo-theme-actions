@@ -1,0 +1,34 @@
+{{- $currentPage := . }}
+
+<div class="top-button-wrapper">
+  <button class="top-button js-button" type="button" aria-controls="navigation" aria-expanded=false aria-label="メニューを開く">
+    <span class="top-button-icon"></span>
+  </button>
+</div>
+<nav class="top-menu js-menu" id="navigation">
+  <ul class="top-menu-list js-list">
+    {{- range site.Menus.main }}
+    {{- $attrs := dict "href" .URL }}
+    {{- if $currentPage.IsMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" "current-page" "aria-current" "page") }}
+    {{- else if $currentPage.HasMenuCurrent .Menu .}}
+      {{- $attrs = merge $attrs (dict "class" "ancestor-page" "aria-current" "true") }}
+    {{- end }}
+    {{- $name := .Name }}
+    {{- with .Identifier }}
+      {{- with T . }}
+        {{- $name = . }}
+      {{- end }}
+    {{- end }}
+    <li class="top-menu-item">
+      <a
+        {{- range $k, $v := $attrs }}
+          {{- with $v }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+          {{- end }}
+        {{- end -}}
+      >{{ $name }}</a>
+    </li>
+  {{- end }}
+  </ul>
+</nav>

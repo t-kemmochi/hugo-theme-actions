@@ -1,0 +1,235 @@
+$breakpoints: (
+    "phone_only": "screen and (max-width: 500px)",
+    "tablet_phone": "screen and (max-width: 999px)",
+    "pc": "screen and (min-width: 1000px)",
+) !default;
+
+@mixin media($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+  }
+}
+
+$main-color: #37ab5c;
+$header-height-pc: 4.5rem;
+$header-height-tablet: 3.5rem;
+$header-height-phone: 3rem;
+
+body {
+  margin:0px;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.top-header {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background: $main-color;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  padding: 0rem 2rem;
+  height: $header-height-pc;
+  @include media(tablet_phone) {
+    height: $header-height-tablet;
+    padding: 0rem 1rem;
+  }
+  @include media(phone_only) {
+    height: $header-height-phone;
+    padding: 0rem 0.8rem;
+  }
+
+  .top-title {
+    margin: 0px;
+    padding: 0px;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.8rem;
+    @include media(tablet_phone) {
+      font-size: 1.5rem;
+      text-align: center;
+      flex: 1;
+      order: 1;
+    }
+    @include media(phone_only) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .top-button-wrapper {
+    display: none;
+
+    @include media(tablet_phone) {
+      display: block;
+      width: 4rem;
+      text-align:left; 
+  
+      .top-button {
+        display: inline-block;
+        padding: 0rem;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+
+        .top-button-icon {
+          &::before {
+            font-family: "Line Awesome Free";
+            font-weight: 900;
+            content: "\f0c9";
+            font-size: 2rem;
+          }
+          @include media(phone_only) {
+            &::before {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      .top-button.is-active {
+        .top-button-icon::before {
+          content: "\f00d";
+          transition: 0.3s ease;
+        }
+      }
+    }
+  }
+
+  .top-menu {
+    display: block;
+    flex: 1;
+    padding: 0rem 2rem;
+    @include media(tablet_phone) {
+      display: none;
+
+      &.is-active {
+        display: block;
+        position: absolute; 
+        left: 0rem;
+        z-index: 100;
+        top: $header-height-tablet;
+        width: 100%;
+        padding: 0rem;
+        background-color: $main-color;
+      }
+    }
+      
+    @include media(phone_only) {
+      &.is-active {
+        top: $header-height-phone;
+      }
+    }
+
+    .top-menu-list {
+      display: flex;
+      margin: 0px;
+      padding: 0px;
+      flex-wrap: wrap;
+      flex-direction: row;
+      flex:1;
+      align-items: center;
+      justify-content: flex-end;
+
+      .top-menu-item {
+        padding: 0rem 0.5rem;
+        text-align: center;
+        list-style-type: none;
+        font-size: 1rem;
+
+        .current-page, .ancestor-page {
+          font-weight: 700;
+        }
+      }
+    }
+
+    @include media(tablet_phone) {
+      .top-menu-list {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: normal;
+  
+        .top-menu-item {
+          padding: 0.8rem 2rem;
+          text-align: left;
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    
+    @include media(phone_only) {
+      .top-menu-list {  
+        .top-menu-item {
+          padding: 0.6rem 2rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .top-language {
+    @include media(tablet_phone) {
+      order: 2;
+      padding: 0.4rem 0rem 0rem 0rem;
+      width: 4rem;
+      text-align: right;
+    }
+    @include media(phone_only) {
+      padding: 0.2rem 0rem 0rem 0rem;
+    }
+
+    .top-language-link {
+      line-height: 100%;
+
+      padding: 0px;
+      font-size: 1.2rem;
+      font-weight: 400;
+      
+      @include media(tablet_phone) {
+        font-size: 0.8rem;
+        font-weight: 600;
+        display: inline-block;
+        text-align: center;
+        vertical-align: -0.5rem;
+      }
+
+      @include media(phone_only) {
+        font-size: 0.7rem;
+      }
+
+      &::before {
+        font-family: "Line Awesome Free";
+        font-weight: 900;
+        content: "\f0ac";
+
+        font-size: 1.5rem;
+        vertical-align: -0.15rem;
+        padding: 0px 0.2rem;
+        margin: 0px;
+        @include media(tablet_phone) {
+          display: block;
+          text-align: center;
+          font-size: 1.8rem;
+          margin: 0rem 0rem 0.5rem 0rem;
+        }
+        @include media(phone_only) {
+          font-size: 1.4rem;
+          margin: 0rem 0rem 0.3rem 0rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+

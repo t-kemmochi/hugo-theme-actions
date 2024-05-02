@@ -1,0 +1,31 @@
+ja: 
+  languageCode: ja
+  languageName: 日本語
+  title: T. Kemmochi
+  weight: 1
+  menus:
+    main:
+      - name: Home
+        pageRef: /
+        weight: 10
+      - name: Posts
+        pageRef: /posts
+        weight: 20
+en: 
+  languageCode: en-us
+  languageName: English
+  title: T. Kemmochi
+  weight: 2
+  menus:
+    main:
+      - name: Home
+        pageRef: /
+        weight: 10
+      - name: Posts
+        pageRef: /posts
+        weight: 20
+zh: 
+  languageCode: zh
+  languageName: ZH
+  title: Chinese
+  weight: 3

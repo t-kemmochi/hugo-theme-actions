@@ -1,0 +1,4 @@
+{{ $langBaseURL := relLangURL "" }}
+<div class="top-title"><a href={{ printf "%s" $langBaseURL | safeHTMLAttr }}>{{ site.Title }}</a></div>
+{{ partial "menu.html" . }}
+{{ partial "language.html" . }}
