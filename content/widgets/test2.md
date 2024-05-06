@@ -1,8 +1,6 @@
 ---
 title: Test22
 weight: 20
-headless: true
-
 ---
 
 Test222
