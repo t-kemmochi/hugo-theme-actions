@@ -11,6 +11,9 @@ ja:
       - name: Posts
         pageRef: /posts
         weight: 20
+      - name: Widgets
+        pageRef: /widgets
+        weight: 30
 en: 
   languageCode: en-us
   languageName: English

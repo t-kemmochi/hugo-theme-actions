@@ -10,10 +10,11 @@ $breakpoints: (
   }
 }
 
-$main-color: #37ab5c;
-$header-height-pc: 4.5rem;
-$header-height-tablet: 3.5rem;
-$header-height-phone: 3rem;
+$color-main: #37ab5c;
+$color-nav-link: #03451f;
+$height-header-pc: 4.5rem;
+$height-header-tablet: 3.5rem;
+$height-header-phone: 3rem;
 
 body {
   margin:0px;
@@ -28,7 +29,7 @@ a {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  background: $main-color;
+  background: $color-main;
   align-items: center;
   position: sticky;
   top: 0px;
@@ -36,13 +37,13 @@ a {
   margin: 0px;
   display: flex;
   padding: 0rem 2rem;
-  height: $header-height-pc;
+  height: $height-header-pc;
   @include media(tablet_phone) {
-    height: $header-height-tablet;
+    height: $height-header-tablet;
     padding: 0rem 1rem;
   }
   @include media(phone_only) {
-    height: $header-height-phone;
+    height: $height-header-phone;
     padding: 0rem 0.8rem;
   }
 
@@ -84,6 +85,7 @@ a {
             font-weight: 900;
             content: "\f0c9";
             font-size: 2rem;
+            color: $color-nav-link;
           }
           @include media(phone_only) {
             &::before {
@@ -96,7 +98,6 @@ a {
       .top-button.is-active {
         .top-button-icon::before {
           content: "\f00d";
-          transition: 0.3s ease;
         }
       }
     }
@@ -112,18 +113,20 @@ a {
       &.is-active {
         display: block;
         position: absolute; 
+        top: $height-header-tablet;
         left: 0rem;
         z-index: 100;
-        top: $header-height-tablet;
+        height: calc(100vh - #{$height-header-tablet});
         width: 100%;
         padding: 0rem;
-        background-color: $main-color;
+        background-color: rgba(0,0,0,0.5);
       }
     }
       
     @include media(phone_only) {
       &.is-active {
-        top: $header-height-phone;
+        top: $height-header-phone;
+        height: calc(100vh - #{$height-header-phone});
       }
     }
 
@@ -138,10 +141,15 @@ a {
       justify-content: flex-end;
 
       .top-menu-item {
-        padding: 0rem 0.5rem;
-        text-align: center;
+        padding: 0rem;
         list-style-type: none;
-        font-size: 1rem;
+        
+        .top-menu-link {
+          display: block;
+          padding: 1.5rem 0.5rem;
+          font-size: 1rem;
+          color: $color-nav-link;
+        }
 
         .current-page, .ancestor-page {
           font-weight: 700;
@@ -154,11 +162,16 @@ a {
         flex-direction: column;
         justify-content: flex-start;
         align-items: normal;
+        background-color: $color-main;
   
         .top-menu-item {
-          padding: 0.8rem 2rem;
-          text-align: left;
-          font-size: 1.1rem;
+          padding: 0rem;
+          .top-menu-link {
+            display: block;
+            padding: 0.8rem 2rem;
+            text-align: left;
+            font-size: 1.1rem;
+          }
         }
       }
     }
@@ -167,8 +180,10 @@ a {
     @include media(phone_only) {
       .top-menu-list {  
         .top-menu-item {
-          padding: 0.6rem 2rem;
-          font-size: 1rem;
+          .top-menu-link {
+            padding: 0.6rem 2rem;
+            font-size: 1rem;
+          }
         }
       }
     }
@@ -186,6 +201,7 @@ a {
     }
 
     .top-language-link {
+      color: $color-nav-link;
       line-height: 100%;
 
       padding: 0px;
@@ -210,7 +226,7 @@ a {
         content: "\f0ac";
 
         font-size: 1.5rem;
-        vertical-align: -0.15rem;
+        vertical-align: -0.1rem;
         padding: 0px 0.2rem;
         margin: 0px;
         @include media(tablet_phone) {

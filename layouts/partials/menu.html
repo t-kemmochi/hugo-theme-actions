@@ -1,7 +1,7 @@
 {{- $currentPage := . }}
 
 <div class="top-button-wrapper">
-  <button class="top-button js-button" type="button" aria-controls="navigation" aria-expanded=false aria-label="メニューを開く">
+  <button class="top-button js-button" type="button" aria-controls="navigation" aria-expanded=false aria-label="Open menu">
     <span class="top-button-icon"></span>
   </button>
 </div>
@@ -10,9 +10,11 @@
     {{- range site.Menus.main }}
     {{- $attrs := dict "href" .URL }}
     {{- if $currentPage.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "current-page" "aria-current" "page") }}
+      {{- $attrs = merge $attrs (dict "class" "top-menu-link current-page" "aria-current" "page") }}
     {{- else if $currentPage.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "ancestor-page" "aria-current" "true") }}
+      {{- $attrs = merge $attrs (dict "class" "top-menu-link ancestor-page" "aria-current" "true") }}
+    {{- else }}
+      {{- $attrs = merge $attrs (dict "class" "top-menu-link") }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}

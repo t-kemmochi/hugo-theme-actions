@@ -74,6 +74,7 @@ a {
     font-weight: 900;
     content: "\f0c9";
     font-size: 2rem;
+    color: #03451f;
   }
 }
 @media screen and (max-width: 999px) and (max-width: 500px) {
@@ -84,7 +85,6 @@ a {
 @media screen and (max-width: 999px) {
   .top-header .top-button-wrapper .top-button.is-active .top-button-icon::before {
     content: "\f00d";
-    transition: 0.3s ease;
   }
 }
 .top-header .top-menu {
@@ -99,17 +99,19 @@ a {
   .top-header .top-menu.is-active {
     display: block;
     position: absolute;
+    top: 3.5rem;
     left: 0rem;
     z-index: 100;
-    top: 3.5rem;
+    height: calc(100vh - 3.5rem);
     width: 100%;
     padding: 0rem;
-    background-color: #37ab5c;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 @media screen and (max-width: 500px) {
   .top-header .top-menu.is-active {
     top: 3rem;
+    height: calc(100vh - 3rem);
   }
 }
 .top-header .top-menu .top-menu-list {
@@ -123,10 +125,14 @@ a {
   justify-content: flex-end;
 }
 .top-header .top-menu .top-menu-list .top-menu-item {
-  padding: 0rem 0.5rem;
-  text-align: center;
+  padding: 0rem;
   list-style-type: none;
+}
+.top-header .top-menu .top-menu-list .top-menu-item .top-menu-link {
+  display: block;
+  padding: 1.5rem 0.5rem;
   font-size: 1rem;
+  color: #03451f;
 }
 .top-header .top-menu .top-menu-list .top-menu-item .current-page, .top-header .top-menu .top-menu-list .top-menu-item .ancestor-page {
   font-weight: 700;
@@ -136,15 +142,20 @@ a {
     flex-direction: column;
     justify-content: flex-start;
     align-items: normal;
+    background-color: #37ab5c;
   }
   .top-header .top-menu .top-menu-list .top-menu-item {
+    padding: 0rem;
+  }
+  .top-header .top-menu .top-menu-list .top-menu-item .top-menu-link {
+    display: block;
     padding: 0.8rem 2rem;
     text-align: left;
     font-size: 1.1rem;
   }
 }
 @media screen and (max-width: 500px) {
-  .top-header .top-menu .top-menu-list .top-menu-item {
+  .top-header .top-menu .top-menu-list .top-menu-item .top-menu-link {
     padding: 0.6rem 2rem;
     font-size: 1rem;
   }
@@ -163,6 +174,7 @@ a {
   }
 }
 .top-header .top-language .top-language-link {
+  color: #03451f;
   line-height: 100%;
   padding: 0px;
   font-size: 1.2rem;
@@ -187,7 +199,7 @@ a {
   font-weight: 900;
   content: "\f0ac";
   font-size: 1.5rem;
-  vertical-align: -0.15rem;
+  vertical-align: -0.1rem;
   padding: 0px 0.2rem;
   margin: 0px;
 }
