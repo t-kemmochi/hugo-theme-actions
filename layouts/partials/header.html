@@ -1,4 +1,12 @@
 {{ $langBaseURL := relLangURL "" }}
-<div class="top-title"><a href={{ printf "%s" $langBaseURL | safeHTMLAttr }}>{{ site.Title }}</a></div>
-{{ partial "menu.html" . }}
-{{ partial "language.html" . }}
+
+<div class="header-content">
+  <div class="header-brand">
+    <a href={{ printf "%s" $langBaseURL | safeHTMLAttr }} class="header-title">{{ site.Title }}</a>
+    {{ partial "button.html" . }}
+  </div>
+  <div class="header-navigation js-menu">
+    {{ partial "menu.html" . }}
+    {{ partial "language.html" . }}  
+  </div>
+</div>

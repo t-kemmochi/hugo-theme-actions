@@ -4,11 +4,12 @@
   {{ partial "head.html" . }}
 </head>
 <body>
-  <header class="top-header">
+  <header class="header-container">
     {{ partial "header.html" . }}
   </header>
   {{ partial "debug.html" . }}
-<main>
+  {{/*  {{ partial "navbar_bulma.html" . }}  */}}
+  <main>
     {{ block "main" . }}{{ end }}
   </main>
   <footer>

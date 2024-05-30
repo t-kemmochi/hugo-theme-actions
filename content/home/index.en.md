@@ -1,5 +1,5 @@
 ---
-title: Headless
+title: Home Page
 headless: true
 ---
 

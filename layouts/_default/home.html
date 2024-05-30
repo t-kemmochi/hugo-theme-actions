@@ -1,7 +1,80 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+  {{- $language := .Site.Language.Lang }}
+  {{- $homepage := cond (and .Site.IsMultiLingual (not .Site.Params.contentDir)) (printf "/home/index.%s.md" $language) "/home/index.md" }}
+  {{/*  Show header from _index.md file */}}
+  <h1 class="home-heading">{{- .Site.Home.Title }}</h1>
+  
+
+  {{- with $widget_page := .Site.GetPage $homepage }}
+    {{- range $current_widget := where (sort (.Resources.ByType "page") ".Weight") ".Language.Lang" $language }}
+      {{ $widget_id := or .Params.id .File.ContentBaseName }}
+
+      {{/*  about widget  */}}
+      {{- if eq .Params.widget "about" }}
+        {{- partial "partials/widgets/about.html" (dict "current_widget" . "widget_page" $widget_page "widget_id" $widget_id) }}
+
+      {{/*  pagination widget  */}}
+      {{- else if eq .Params.widget "pages" }}
+        <section id="{{ $widget_id }}" class="widget-section widget-pages">
+          <div class="widget-section-container">
+            <div class="widget-section-heading">
+              <h2>{{- .Title }}</h2>
+            </div>
+            <div class="widget-section-content">
+              {{- with .Site.GetPage .Params.directory }}
+                {{- range first (default 3 $current_widget.Params.pagination) .Pages.ByDate.Reverse }}
+                  <h3>{{- .Title }}</h3> 
+                  {{- .Date }}
+                  {{- .Params.Category }}
+                  {{- .Summary }}
+                {{- end }}
+
+                
+                {{/*  cta such as "See all"  */}}
+                {{- $params_cta := (dict 
+                    "text" "see all" 
+                    "capitalize" true 
+                    "url" .RelPermalink 
+                    "newTab" false 
+                    "icon" "angle-right"
+                  ) 
+                }}
+                {{- with $current_widget.Params.cta }}
+                  {{- $params_cta = merge $params_cta . }}
+                {{- end }}
+                {{- with $params_cta }}
+                  {{- $cta_text := cond .capitalize (upper .text) .text }}
+                  {{- $cta_attrs := dict "href" .url }}
+                    {{- if .newTab }}
+                      {{- $cta_attrs = merge $cta_attrs (dict "target" "_blank")}}
+                    {{- end }}
+                  <div>
+                    <a 
+                      {{- range $k, $v := $cta_attrs }}
+                        {{- with $v }}
+                          {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+                        {{- end }}
+                      {{- end -}}
+                    >{{- $cta_text }} <i class={{ printf "las la-%s" .icon }}></i></a>
+                  </div> 
+                {{- end }}
+              {{- end }}
+            </div>
+          </div>
+        </section>
+      {{/*  blank widget  */}}
+      {{- else if eq .Params.widget "blank" }}
+        <section id="{{ $widget_id }}" class="widget-section widget-blank">
+          <div class="widget-section-container">
+            <div class="widget-section-heading">
+              <h2>{{- .Title }}</h2>
+            </div>
+            <div class="widget-section-content">
+                {{- .Content }}
+            </div>
+          </div>
+        </section>
+      {{- end }}
+    {{- end }}
+  {{- end }}
 {{ end }}

@@ -8,30 +8,12 @@ Debug
   {{- end }}
 </p>
 
+
+
 <p>
-  {{- with .Site.GetPage "widgets" }}
-    {{- range sort (.Resources.ByType "page") ".Weight" }}
-      <div>
-        {{ . }}
-      </div>
-      <div>
-        <p>
-          {{ .File.ContentBaseName }} 
-        </p>
-        <h2>
-          {{ .Title }}
-        </h2>
-        <p>
-          weight: {{- .Weight }}
-        </p>
-        <p>
-          {{ .Content }}
-        </p>
-      </div>
-      <div>
-        {{ $hash_id := replace .File.ContentBaseName "index" (path.Base (path.Split .Path).Dir) }}
-        {{- $hash_id }}
-      </div>
-    {{- end }}
-  {{- end }}
+  {{- $str := "First string."}}
+  {{- $str }}
+  <br>
+  {{- $str = print $str " And second string."}}
+  {{- $str }}
 </p>

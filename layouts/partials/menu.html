@@ -1,20 +1,16 @@
 {{- $currentPage := . }}
 
-<div class="top-button-wrapper">
-  <button class="top-button js-button" type="button" aria-controls="navigation" aria-expanded=false aria-label="Open menu">
-    <span class="top-button-icon"></span>
-  </button>
-</div>
-<nav class="top-menu js-menu" id="navigation">
-  <ul class="top-menu-list js-list">
+
+<nav class="header-menu-container">
+  <ul class="header-menu-list">
     {{- range site.Menus.main }}
     {{- $attrs := dict "href" .URL }}
     {{- if $currentPage.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "top-menu-link current-page" "aria-current" "page") }}
+      {{- $attrs = merge $attrs (dict "class" "header-menu-link current-page" "aria-current" "page") }}
     {{- else if $currentPage.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "top-menu-link ancestor-page" "aria-current" "true") }}
+      {{- $attrs = merge $attrs (dict "class" "header-menu-link ancestor-page" "aria-current" "true") }}
     {{- else }}
-      {{- $attrs = merge $attrs (dict "class" "top-menu-link") }}
+      {{- $attrs = merge $attrs (dict "class" "header-menu-link") }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}
@@ -22,7 +18,7 @@
         {{- $name = . }}
       {{- end }}
     {{- end }}
-    <li class="top-menu-item">
+    <li class="header-menu-item">
       <a
         {{- range $k, $v := $attrs }}
           {{- with $v }}

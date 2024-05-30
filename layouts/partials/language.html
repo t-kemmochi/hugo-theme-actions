@@ -2,8 +2,9 @@
   {{- with index .Translations 0 }}
     {{- $langName := or .Language.LanguageName .Language.Lang }}
     {{- $langCode := or .Language.LanguageCode .Language.Lang }}
-    <div class="top-language">
-      <a href="{{ .RelPermalink }}" hreflang="{{ $langCode }}" class="top-language-link">{{- $langName }}</a>
+    <div class="header-language">
+      <ion-icon name="globe-outline" class="header-language-icon" aria-hidden="true"></ion-icon>
+      <a href="{{ .RelPermalink }}" hreflang="{{ $langCode }}" class="header-language-link">{{- $langName }}</a>
     </div>
   {{- end }}
 {{- end }}

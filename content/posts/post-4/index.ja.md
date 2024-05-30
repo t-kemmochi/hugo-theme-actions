@@ -1,9 +1,12 @@
-+++
-title = 'Post 4'
-date = 2023-03-16T11:00:00-07:00
-draft = false
-tags = ['red','green','blue']
-+++
+---
+title: Post 4
+date: 2023-04-15T11:00:00-07:00
+draft: false
+tags: 
+  - red
+  - green
+  - blue
+---
 
 Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. 
 

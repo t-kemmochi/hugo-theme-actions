@@ -12,9 +12,12 @@ $breakpoints: (
 
 $color-main: #37ab5c;
 $color-nav-link: #03451f;
-$height-header-pc: 4.5rem;
+
+$height-header-pc: 4rem;
 $height-header-tablet: 3.5rem;
 $height-header-phone: 3rem;
+
+$max-width-home: 1200px;
 
 body {
   margin:0px;
@@ -23,229 +26,305 @@ body {
 
 a {
   text-decoration: none;
+  color: $color-main;
 }
 
-.top-header {
-  font-family: "Raleway", sans-serif;
+h1, h2 {
+  font-family: Raleway, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+h3, h4, h5, h6 {
+  font-family: Montserrat, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+// ヘッダー部の背景部分
+.header-container {
+  font-family: Raleway, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   background: $color-main;
-  align-items: center;
   position: sticky;
   top: 0px;
   width: 100%;
   margin: 0px;
+  line-height: 1;
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+}
+
+// ヘッダー部の実際の中身
+// - ロゴ (header-brand) = トップへのリンク + メニューボタン
+// - ナビゲーションメニュー (header-navigation) = メニュー + 言語切り替え
+// の2つを並べたflexbox
+.header-content {
   display: flex;
-  padding: 0rem 2rem;
+  align-items: center;
+  max-width: $max-width-home;
+  margin: 0px auto;
+  padding: 0rem 1rem;
   height: $height-header-pc;
   @include media(tablet_phone) {
     height: $height-header-tablet;
-    padding: 0rem 1rem;
   }
   @include media(phone_only) {
     height: $height-header-phone;
-    padding: 0rem 0.8rem;
   }
+}
 
-  .top-title {
-    margin: 0px;
+
+// ヘッダーの左側: 以下の2つが入っている.
+// - トップページへのリンク (header-title) 
+// - 横幅が狭いとき用のメニューボタン (header-button) 
+// 
+// これら2つを横に並べたflexboxになっている.
+// ただし横幅が広いときはメニューボタンは非表示.
+.header-brand {
+  display: flex;
+  align-items: center;
+  @include media(tablet_phone) {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.header-title {
+  display: inline-block;
+  margin: 0px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.8rem;
+  @include media(tablet_phone) {
+    font-size: 1.5rem;
+  }
+  @include media(phone_only) {
+    font-size: 1.2rem;
+  }
+}
+
+.header-button {
+  display: none;
+
+  @include media(tablet_phone) {
+    display: inline-block;
     padding: 0px;
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 1.8rem;
-    @include media(tablet_phone) {
-      font-size: 1.5rem;
-      text-align: center;
-      flex: 1;
-      order: 1;
-    }
-    @include media(phone_only) {
-      font-size: 1.2rem;
-    }
+    border: none;
+    background: transparent;
+    cursor: pointer;
   }
+}
 
-  .top-button-wrapper {
-    display: none;
-
-    @include media(tablet_phone) {
-      display: block;
-      width: 4rem;
-      text-align:left; 
-  
-      .top-button {
-        display: inline-block;
-        padding: 0rem;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-
-        .top-button-icon {
-          &::before {
-            font-family: "Line Awesome Free";
-            font-weight: 900;
-            content: "\f0c9";
-            font-size: 2rem;
-            color: $color-nav-link;
-          }
-          @include media(phone_only) {
-            &::before {
-              font-size: 1.5rem;
-            }
-          }
-        }
-      }
-
-      .top-button.is-active {
-        .top-button-icon::before {
-          content: "\f00d";
-        }
-      }
-    }
-  }
-
-  .top-menu {
-    display: block;
-    flex: 1;
-    padding: 0rem 2rem;
-    @include media(tablet_phone) {
-      display: none;
-
-      &.is-active {
-        display: block;
-        position: absolute; 
-        top: $height-header-tablet;
-        left: 0rem;
-        z-index: 100;
-        height: calc(100vh - #{$height-header-tablet});
-        width: 100%;
-        padding: 0rem;
-        background-color: rgba(0,0,0,0.5);
-      }
-    }
-      
-    @include media(phone_only) {
-      &.is-active {
-        top: $height-header-phone;
-        height: calc(100vh - #{$height-header-phone});
-      }
-    }
-
-    .top-menu-list {
-      display: flex;
-      margin: 0px;
-      padding: 0px;
-      flex-wrap: wrap;
-      flex-direction: row;
-      flex:1;
-      align-items: center;
-      justify-content: flex-end;
-
-      .top-menu-item {
-        padding: 0rem;
-        list-style-type: none;
-        
-        .top-menu-link {
-          display: block;
-          padding: 1.5rem 0.5rem;
-          font-size: 1rem;
-          color: $color-nav-link;
-        }
-
-        .current-page, .ancestor-page {
-          font-weight: 700;
-        }
-      }
-    }
-
-    @include media(tablet_phone) {
-      .top-menu-list {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: normal;
-        background-color: $color-main;
-  
-        .top-menu-item {
-          padding: 0rem;
-          .top-menu-link {
-            display: block;
-            padding: 0.8rem 2rem;
-            text-align: left;
-            font-size: 1.1rem;
-          }
-        }
-      }
-    }
-
-    
-    @include media(phone_only) {
-      .top-menu-list {  
-        .top-menu-item {
-          .top-menu-link {
-            padding: 0.6rem 2rem;
-            font-size: 1rem;
-          }
-        }
-      }
-    }
-  }
-
-  .top-language {
-    @include media(tablet_phone) {
-      order: 2;
-      padding: 0.4rem 0rem 0rem 0rem;
-      width: 4rem;
-      text-align: right;
-    }
-    @include media(phone_only) {
-      padding: 0.2rem 0rem 0rem 0rem;
-    }
-
-    .top-language-link {
-      color: $color-nav-link;
-      line-height: 100%;
-
-      padding: 0px;
-      font-size: 1.2rem;
-      font-weight: 400;
-      
-      @include media(tablet_phone) {
-        font-size: 0.8rem;
-        font-weight: 600;
-        display: inline-block;
-        text-align: center;
-        vertical-align: -0.5rem;
-      }
-
-      @include media(phone_only) {
-        font-size: 0.7rem;
-      }
-
-      &::before {
-        font-family: "Line Awesome Free";
-        font-weight: 900;
-        content: "\f0ac";
-
-        font-size: 1.5rem;
-        vertical-align: -0.1rem;
-        padding: 0px 0.2rem;
-        margin: 0px;
-        @include media(tablet_phone) {
-          display: block;
-          text-align: center;
-          font-size: 1.8rem;
-          margin: 0rem 0rem 0.5rem 0rem;
-        }
-        @include media(phone_only) {
-          font-size: 1.4rem;
-          margin: 0rem 0rem 0.3rem 0rem;
-        }
-      }
-    }
-  }
+// ハンバーガーメニューのアイコンはioniconsを使って疑似要素ではなく直接表示することにした.
+// クリックによる切り替えはjavascriptの方でコントロールしている.
+.header-button-icon {
+  font-size: 1.8rem;
+  color: $color-nav-link;
 }
 
 
 
 
+// ヘッダーの右側: 
+// - 各ページへのメニュー (header-menu-container)
+// - 言語切り替えボタン (header-language)
+// の2つを並べたflexbox
+.header-navigation {
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  // 横幅が狭いときは, 「メニュー」と「言語切り替え」を縦に並べる
+  @include media(tablet_phone) {
+    display: none;
+    flex-direction: column;
+
+    // メニューを出したときに下にある普通のコンテンツを覆うようにする
+    &.is-active {
+      display: block;
+      position: absolute; 
+      top: $height-header-tablet;
+      left: 0rem;
+      z-index: 100;
+      height: calc(100vh - #{$height-header-tablet});
+      width: 100%;
+      background-color: rgba(0,0,0,0.2);
+    }
+  }
+  
+  @include media(phone_only) {
+    &.is-active {
+      top: $height-header-phone;
+      height: calc(100vh - #{$height-header-phone});
+    }
+  }
+}
+
+
+// 各ページへのナビゲーションメニューの外側
+// これ自身はflexboxではない.
+// header-menu-container -> header-menu-list (ulタグ) -> header-menu-item (liタグ)
+// の順に入れ子になっている.
+.header-menu-container {
+  display: block;
+  font-size: 1rem;
+  flex: 1;
+  background-color: $color-main;
+  padding: 0rem 2rem;
+  
+  @include media(tablet_phone) {
+    padding: 0px;
+  }
+}
+
+
+// 各ページへのナビゲーションメニュー
+// ulタグにつけるクラス
+// liタグを子要素に持つflexbox
+.header-menu-list {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex:1;
+  align-items: center;
+  justify-content: flex-start;
+
+
+  @include media(tablet_phone) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: normal;
+    // padding: 0.5rem 0rem;
+    // border-top: rgba(1,1,1,0.2) solid 1px;
+  }
+}
+
+.header-menu-item {
+  list-style-type: none;
+  padding: 0rem 0.5rem;
+  
+  @include media(tablet_phone) {
+    padding: 0.5rem 1rem;
+    &:last-child {
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+
+  
+.header-menu-link {
+  display: block;
+  color: $color-nav-link;
+  
+  &.current-page, &.ancestor-page {
+    font-weight: 700;
+  }
+
+  @include media(tablet_phone) {
+    text-align: left;
+  }
+}
+
+
+// 言語切り替えボタン
+// アイコンと言語名を並べたflexbox
+// 横幅が狭いときはメニューと一緒に隠すことにした
+.header-language {
+  background-color: $color-main;
+  display: flex;
+  align-items: center;
+  
+  @include media(tablet_phone) {
+    border-top: rgba(1,1,1,0.1) 1px solid;
+    padding: 1rem;
+  }
+}
+
+.header-language-icon {
+  font-size: 1.2rem;
+  color: $color-nav-link;
+
+  @include media(tablet_phone) {
+    font-size: 1rem;
+  }
+}
+
+.header-language-link {
+  display: block;
+  font-weight: 400;
+  color: $color-nav-link;
+  font-size: 1.1rem;
+  
+  @include media(tablet_phone) {
+    font-size: 1rem;
+  }
+}
+
+
+.widget-about {
+
+  .about-profile {
+    text-align: center;
+    flex: 1;
+    width: 100%;
+    .about-profile-photo {
+      display: inline;
+    }
+  }
+
+  .about-content {
+    flex: 2;
+    width: 100%;
+
+    @include media(tablet_phone) { 
+      .about-heading { 
+        text-align: center;
+      }
+    }
+  }
+  .photo-circle {
+    border-radius: 50%;
+  }
+}
+
+.home-heading {
+  max-width: $max-width-home;
+  margin: 2rem auto;
+  @include media(tablet_phone) {  
+    text-align: center;
+  }
+}
+
+.widget-section {
+
+  width: 100%;
+  &:nth-of-type(even) {
+    background-color: #eeeeee;
+  }
+  .widget-section-container {
+  
+    display: flex;
+    flex-direction: row;
+    @include media(tablet_phone) {  
+      flex-direction: column;
+      align-items: center;
+    }
+
+    max-width: $max-width-home;
+    margin: 2rem auto;
+
+    .widget-section-heading {
+      flex: 1;
+      width: 100%;
+      @include media(tablet_phone) {  
+        text-align: center;
+      }
+    }
+    .widget-section-content {
+      flex: 2;
+      width: 100%;
+    }
+  }
+}
 
 

@@ -11,8 +11,8 @@ ja:
       - name: Posts
         pageRef: /posts
         weight: 20
-      - name: Widgets
-        pageRef: /widgets
+      - name: Memo
+        pageRef: /memo
         weight: 30
 en: 
   languageCode: en-us
@@ -27,8 +27,3 @@ en:
       - name: Posts
         pageRef: /posts
         weight: 20
-zh: 
-  languageCode: zh
-  languageName: ZH
-  title: Chinese
-  weight: 3

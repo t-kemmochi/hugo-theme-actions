@@ -1,0 +1,59 @@
+{{- /*
+About widget. Show profiles.
+
+@context {current_widget} page The current widget.
+@context {widget_page} page The directory where widget files belong.
+@context {widget_id} string The identifier if id is set in the front matter, else content base name. (e.g. about.ja.md -> about)
+
+@example: {{ partial "partials/widgets/about.html" (dict "current_widget" . "widget_page" $widget_page "widget_id" $widget_id) }}
+*/}}
+
+{{- $current_widget := .current_widget }}
+{{- $widget_page := .widget_page }}
+{{- $widget_id := .widget_id }}
+
+{{- with $current_widget }}
+  <section id="{{ $widget_id }}" class="widget-section widget-about">
+
+    <div class="widget-section-container">
+      {{/*  Show photo and profile when active  */}}
+      {{- if .Params.profile.active }}
+        <aside class="about-profile">
+          {{/*  Photo  */}}
+          {{- with $widget_page.Resources.Get .Params.profile.photo.file }}
+            {{- $photo := .Fill "300x300 Smart" }}
+            {{- $classes := "about-profile-photo"}}
+            {{- if eq $current_widget.Params.photo.shape "circle" }}
+              {{- $classes = print $classes " photo-circle" }}
+            {{- end }}
+              <img src="{{ $photo.RelPermalink }}" 
+                class="{{ $classes }}"
+                width=300 height=300
+              >
+          {{- end }}
+          {{/*  Profile  */}}
+          <div class="about-name">
+            {{- .Params.profile.name }}
+          </div>
+          <div class="about-position">
+            {{- .Params.profile.position }}
+          </div>
+          <div class="about-affiliation">
+            {{- with .Params.profile.affiliation }}
+              {{- if .url }}
+                <a href="{{ .url }}" target="_blank">{{ .name }}</a>
+              {{- else }}
+                {{ .name }}
+              {{- end }}
+            {{- end }}
+          </div>
+        </aside>
+      {{- end }}
+      {{/*  Content of the about widget  */}}
+      <div class="about-content">
+        <h2 class="about-heading">{{- .Title }}</h2>
+        {{- .Content }}
+      </div>
+    </div>
+  </section>
+{{- end }}
