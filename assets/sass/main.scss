@@ -10,7 +10,9 @@ $breakpoints: (
   }
 }
 
+$color-text: #333333;
 $color-main: #37ab5c;
+$color-link: $color-main;
 $color-nav-link: #03451f;
 
 $height-header-pc: 4rem;
@@ -27,19 +29,35 @@ body {
 a {
   text-decoration: none;
   color: $color-main;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-h1, h2 {
-  font-family: Raleway, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-}
 
-h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: Montserrat, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
+// h1 {
+//   font-weight: 400;
+//   font-size: 3rem;
+// }
+
+// h2 {
+//   font-weight: 400;
+//   font-size: 2rem;
+// }
+
+// h3 {
+//   font-weight: 700;
+//   font-size: 1.2rem;
+// }
+
 // ヘッダー部の背景部分
 .header-container {
-  font-family: Raleway, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-family: Montserrat, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   background: $color-main;
@@ -49,6 +67,9 @@ h3, h4, h5, h6 {
   margin: 0px;
   line-height: 1;
   box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 // ヘッダー部の実際の中身
@@ -87,11 +108,11 @@ h3, h4, h5, h6 {
 }
 
 .header-title {
-  display: inline-block;
+  display: block;
   margin: 0px;
   color: #ffffff;
-  font-weight: 800;
-  font-size: 1.8rem;
+  font-weight: 700;
+  font-size: 1.6rem;
   @include media(tablet_phone) {
     font-size: 1.5rem;
   }
@@ -109,14 +130,20 @@ h3, h4, h5, h6 {
     border: none;
     background: transparent;
     cursor: pointer;
+  
+    .header-button-icon::before {
+      display: inline-block;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      color: $color-nav-link;
+      font: var(--fa-font-solid);
+      content: '\f0c9';
+      font-size: 1.5rem;
+    }
+    &.is-active .header-button-icon::before {
+      content: '\f00d';
+    }
   }
-}
-
-// ハンバーガーメニューのアイコンはioniconsを使って疑似要素ではなく直接表示することにした.
-// クリックによる切り替えはjavascriptの方でコントロールしている.
-.header-button-icon {
-  font-size: 1.8rem;
-  color: $color-nav-link;
 }
 
 
@@ -193,21 +220,12 @@ h3, h4, h5, h6 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: normal;
-    // padding: 0.5rem 0rem;
-    // border-top: rgba(1,1,1,0.2) solid 1px;
+    padding-bottom: 0.5rem;
   }
 }
 
 .header-menu-item {
   list-style-type: none;
-  padding: 0rem 0.5rem;
-  
-  @include media(tablet_phone) {
-    padding: 0.5rem 1rem;
-    &:last-child {
-      padding-bottom: 1rem;
-    }
-  }
 }
 
 
@@ -215,13 +233,15 @@ h3, h4, h5, h6 {
 .header-menu-link {
   display: block;
   color: $color-nav-link;
+  padding: 0.5rem;
   
   &.current-page, &.ancestor-page {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   @include media(tablet_phone) {
     text-align: left;
+    padding: 0.5rem 1rem;
   }
 }
 
@@ -235,7 +255,7 @@ h3, h4, h5, h6 {
   align-items: center;
   
   @include media(tablet_phone) {
-    border-top: rgba(1,1,1,0.1) 1px solid;
+    border-top: rgba(128,128,128,0.5) 1px solid;
     padding: 1rem;
   }
 }
@@ -243,6 +263,7 @@ h3, h4, h5, h6 {
 .header-language-icon {
   font-size: 1.2rem;
   color: $color-nav-link;
+  padding: 0rem 0.2rem;
 
   @include media(tablet_phone) {
     font-size: 1rem;
@@ -261,70 +282,126 @@ h3, h4, h5, h6 {
 }
 
 
-.widget-about {
-
-  .about-profile {
-    text-align: center;
-    flex: 1;
-    width: 100%;
-    .about-profile-photo {
-      display: inline;
-    }
-  }
-
-  .about-content {
-    flex: 2;
-    width: 100%;
-
-    @include media(tablet_phone) { 
-      .about-heading { 
-        text-align: center;
-      }
-    }
-  }
-  .photo-circle {
-    border-radius: 50%;
-  }
-}
 
 .home-heading {
   max-width: $max-width-home;
-  margin: 2rem auto;
-  @include media(tablet_phone) {  
-    text-align: center;
-  }
+  margin: 0rem auto;
+  padding: 0rem 1rem;
+  font-weight: 400;
+  font-size: 3rem;
 }
 
-.widget-section {
 
+.widget-container {
   width: 100%;
   &:nth-of-type(even) {
-    background-color: #eeeeee;
+    background-color: #efefef;
   }
-  .widget-section-container {
   
-    display: flex;
-    flex-direction: row;
-    @include media(tablet_phone) {  
-      flex-direction: column;
-      align-items: center;
-    }
+}
 
-    max-width: $max-width-home;
-    margin: 2rem auto;
+.widget-content {
+  max-width: $max-width-home;
+  margin: 0rem auto;
+  padding: 2rem 1rem;
 
-    .widget-section-heading {
-      flex: 1;
-      width: 100%;
-      @include media(tablet_phone) {  
-        text-align: center;
-      }
-    }
-    .widget-section-content {
-      flex: 2;
-      width: 100%;
-    }
+  display: flex;
+  flex-direction: row;
+  @include media(tablet_phone) {  
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+.widget-heading {
+  font-weight: 400;
+  font-size: 2rem;
+
+}
+
+.widget-content-first {
+  flex: 1;
+  width: 100%;
+  // background-color: #eeffff;
+}
+
+
+.widget-content-second {
+  flex: 2;
+  width: 100%;
+  // background-color: #eeffee;
+  font-size: 1.5rem;
+
+  h3 {
+    font-weight: 700;
+    font-size: 1.5rem;
   }
 }
 
 
+.about-photo-container {
+  text-align: center;
+}
+
+.about-photo {
+  display: inline;
+}
+
+.about-photo-circle {
+  border-radius: 50%;
+}
+
+
+.cta-container {
+  margin: 1rem 0rem;
+  // color: $color-link;
+}
+
+.cta-icon {
+  margin-left: 0.2rem;
+}
+
+
+.pages-container {
+  display: block;
+  padding: 1rem;
+  transition: 0.3s;
+  &:hover {
+    // border: #333333 1px solid;
+    box-shadow: 0px 0px 5px 0px #999999;
+  }
+}
+
+.pages-link {
+  color: $color-text;
+}
+
+.pages-category {
+  font-size: 1rem;
+}
+
+.pages-category-icon {
+  color: #666666;
+  // color: #f3d300;
+  // -webkit-text-stroke: 1px #ddd;
+  margin-right: 0.5rem;
+}
+
+.pages-category-link {
+  color: #666666;
+}
+
+.pages-summary {
+  font-size: 1.2rem;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.icon-text-icon {
+  font-size: 2rem;
+  width: 3.5rem;
+}

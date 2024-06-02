@@ -1,0 +1,29 @@
+{{- /*
+Common framework of widgets
+
+@context {current_widget} page: The current widget.
+@context {widget_id} string: The identifier if id is set in the front matter, else content base name. (e.g. about.ja.md -> about)
+@context {homepage} page: The home page (= widget page)
+
+@example: {{ partial "widgets/common.html" (dict "current_widget" . "widget_id" $widget_id "homepage" $homepage) }}
+*/}}
+
+{{- $current_widget := .current_widget }}
+{{- $widget_id := .widget_id }}
+{{- $homepage := .homepage }}
+
+{{- with $current_widget }}
+  <section id="{{ $widget_id }}" class="widget-container">
+    <div class="widget-content">
+      {{- with .Params.widget }}
+        {{- if eq . "about" }}
+          {{- partial "widgets/about.html" (dict "current_widget" $current_widget "homepage" $homepage) }}
+        {{- else if eq . "pages" }}
+          {{- partial "widgets/pages.html" $current_widget }}
+        {{- else if eq . "blank" }}
+          {{- partial "widgets/blank.html" $current_widget }}
+        {{- end }}
+      {{- end }}
+    </div>
+  </section>
+{{- end }}

@@ -1,6 +1,6 @@
 ---
-title: ホームページ
-headless: true
+title: Home
+headless: true # 多分なくても良い
 ---
 
-Widgets page??
+ここの内容は表示されない. 表示されるようにできないでもないけど, その場合は `home.html` のどこかに `{{ .Inner }}` を入れる. でもその必要はないと思う.

@@ -22,3 +22,9 @@ markup:
     noHl: false
     style: emacs
     tabWidth: 4
+  goldmark:
+    renderer:
+      unsafe: true
+
+taxonomies:
+  category: categories

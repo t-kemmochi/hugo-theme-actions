@@ -1,0 +1,25 @@
+{{/*  named parameters  */}}
+
+{{/*  iconset -> string  */}}
+{{/*  icon -> string  */}}
+{{/*  text -> string  */}}
+{{/*  url (oprional) -> string (external link)  */}}
+{{/*  pageRef (optional) -> string  (internal link)  */}}
+
+
+
+<div class="icon-text">
+  <div class="icon-text-icon">
+    {{- with .Params }}
+      {{- $classes := printf "%s %s-%s" .iconset .iconset .icon }}
+      {{- if eq .iconset "fa" }}
+        {{- $classes = print $classes " fa-solid" }}
+      {{- end }}
+      <i class={{ printf "%s" $classes }}></i>
+    {{- end }}
+  </div>
+  <div class="icon-text-text">
+    {{- .Inner | markdownify -}}
+  </div>
+</div>
+

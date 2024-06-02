@@ -1,0 +1,29 @@
+{{/*  {{- $params := (dict "current_widget" $current_widget "url" .RelPermalink ) }}  */}}
+{{/*  .current_widget = <<current widget>>  */}}
+{{/*  .url = url (internal link only)  */}}
+
+{{/*  cta such as "See all"  */}}
+{{- $params_cta := 
+  (dict 
+    "text" "see all" 
+    "capitalize" true 
+    "url" .url 
+    "icon" "angle-right"
+  ) 
+}}
+{{- with .current_widget.Params.cta }}
+  {{- $params_cta = merge $params_cta . }}
+{{- end }}
+{{- with $params_cta }}
+  {{- $cta_text := cond .capitalize (upper .text) .text }}
+  {{- $cta_attrs := dict "href" .url }}
+  <div class="cta-container">
+    <a 
+      {{- range $k, $v := $cta_attrs }}
+        {{- with $v }}
+          {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end }}
+      {{- end -}}
+    >{{- $cta_text }}<i class={{ printf "fa-solid cta-icon fa-%s" .icon }} aria-hidden="true"></i></a>
+  </div> 
+{{- end }}

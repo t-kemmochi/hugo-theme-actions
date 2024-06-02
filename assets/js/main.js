@@ -1,6 +1,5 @@
 const button = document.querySelector(".js-button");
 const menu = document.querySelector(".js-menu");
-const icon = document.querySelector(".js-icon");
 
 let isMenuOpen = false; // メニューの状態を表す変数
 
@@ -13,7 +12,6 @@ const toggleMenu = () => {
     menu.classList.add("is-active");
     button.setAttribute("aria-expanded", "true");
     button.setAttribute("aria-label", "Close menu");
-    icon.setAttribute("name", "close");
   }
   // メニューがクローズの場合
   else {
@@ -21,7 +19,6 @@ const toggleMenu = () => {
     menu.classList.remove("is-active");
     button.setAttribute("aria-expanded", "false");
     button.setAttribute("aria-label", "Open menu");
-    icon.setAttribute("name", "menu");
   }
 };
 

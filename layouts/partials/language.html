@@ -3,7 +3,7 @@
     {{- $langName := or .Language.LanguageName .Language.Lang }}
     {{- $langCode := or .Language.LanguageCode .Language.Lang }}
     <div class="header-language">
-      <ion-icon name="globe-outline" class="header-language-icon" aria-hidden="true"></ion-icon>
+      <i class="fa-solid fa-globe header-language-icon" aria-hidden="true"></i>
       <a href="{{ .RelPermalink }}" hreflang="{{ $langCode }}" class="header-language-link">{{- $langName }}</a>
     </div>
   {{- end }}

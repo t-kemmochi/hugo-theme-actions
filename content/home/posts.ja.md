@@ -5,13 +5,12 @@ weight: 20
 params: 
   widget: pages
   directory: /posts
-  pagination: 3
+  pagination: 4
   cta: 
     text: すべて見る
     capitalize: false
     # url: 
-    newTab: true
-    # icon: angle-double-right
+    icon: caret-right
 ---
 
 ページネーションのテスト

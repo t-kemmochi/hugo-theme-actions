@@ -1,0 +1,18 @@
+{{- /*
+Blank widget. 
+
+@context {.} page: The current widget.
+
+@example: {{- partial "widgets/blank.html" $current_widget }}
+*/}}
+
+{{/*  blank widget  */}}
+
+{{- with . }}
+  <div class="widget-content-first">
+    <h2 class="widget-heading">{{- .Title }}</h2>
+  </div>
+  <div class="widget-content-second">
+    {{- .Content }}
+  </div>
+{{- end }}

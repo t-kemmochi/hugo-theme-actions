@@ -1,0 +1,38 @@
+{{/*  named parameters  */}}
+{{/*  at least url should be given  */}}
+
+{{/*  text -> string  */}}
+{{/*  capitalize -> bool  */}}
+{{/*  url -> string (external link)  */}}
+{{/*  pageRef -> string (internal link)  */}}
+{{/*  icon -> string  */}}
+
+
+{{/*  Default parameters  */}}
+{{- $params_cta := 
+  (dict 
+    "text" "see all" 
+    "capitalize" true 
+    "icon" "angle-right"
+  ) 
+}}
+{{- with .Params }}
+  {{- $params_cta = merge $params_cta . }}
+{{- end }}
+{{- with $params_cta }}
+  {{- $cta_text := cond .capitalize (upper .text) .text }}
+  {{- $cta_url := or .url (site.GetPage .pageRef).RelPermalink }}
+  {{- $cta_attrs := dict "href" $cta_url }}
+  {{- with .url }}
+    {{- $cta_attrs = merge $cta_attrs (dict "target" "_blank")}}
+  {{- end }}
+  <div class="cta-container">
+    <a 
+      {{- range $k, $v := $cta_attrs }}
+        {{- with $v }}
+          {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end }}
+      {{- end -}}
+    >{{- $cta_text }}<i class={{ printf "fa-solid cta-icon fa-%s" .icon }} aria-hidden="true"></i></a>
+  </div> 
+{{- end }}

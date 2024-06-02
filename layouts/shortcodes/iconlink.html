@@ -1,0 +1,37 @@
+{{/*  named parameters  */}}
+
+{{/*  iconset -> string  */}}
+{{/*  icon -> string  */}}
+{{/*  url -> string  */}}
+{{/*  pageRef -> string  */}}
+{{/*  size -> number  */}}
+
+
+{{/*  Default parameters  */}}
+{{- $params_iconlink := 
+  (dict 
+    "size" 2
+  ) 
+}}
+{{- with .Params }}
+  {{- $params_iconlink = merge $params_iconlink . }}
+  {{- $iconlink_url := or (or .url (site.GetPage .pageRef).RelPermalink) .pageRef }}
+  {{- $iconlink_attrs := dict "href" $iconlink_url }}
+  {{- with .url }}
+    {{- $iconlink_attrs = merge $iconlink_attrs (dict "target" "_blank")}}
+  {{- end }}
+
+  {{- with $params_iconlink }}
+    {{- $classes := printf "%s %s-%s %s-%dx" .iconset .iconset .icon .iconset .size }}
+    {{- if eq .iconset "fa" }}
+      {{- $classes = print $classes " fa-solid" }}
+    {{- end }}
+    <a 
+      {{- range $k, $v := $iconlink_attrs }}
+        {{- with $v }}
+          {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end }}
+      {{- end -}}
+    ><i class={{ printf "%s" $classes }}></i></a>
+  {{- end }}
+{{- end }}

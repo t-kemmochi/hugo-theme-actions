@@ -1,0 +1,40 @@
+{{/*  named parameters  */}}
+
+{{/*  iconset -> string  */}}
+{{/*  icon -> string  */}}
+{{/*  text -> string  */}}
+{{/*  url (oprional) -> string (external link)  */}}
+{{/*  pageRef (optional) -> string  (internal link)  */}}
+
+
+{{- with .Params }}
+
+  <div class="icon-text">
+    <div class="icon-text-icon">
+      {{- $classes := printf "%s %s-%s" .iconset .iconset .icon }}
+      {{- if eq .iconset "fa" }}
+        {{- $classes = print $classes " fa-solid" }}
+      {{- end }}
+      <i class={{ printf "%s" $classes }}></i>
+    </div>
+    <div class="icon-text-text">
+      {{- if or .pageRef .url }}
+        {{- $icontext_url := or (or $.Params.url (site.GetPage $.Params.pageRef).RelPermalink) $.Params.pageRef }}
+        {{- $icontext_attrs := dict "href" $icontext_url }}
+        {{- with $.Params.url }}
+          {{- $icontext_attrs = merge $icontext_attrs (dict "target" "_blank")}}
+        {{- end }}
+        <a 
+          {{- range $k, $v := $icontext_attrs }}
+            {{- with $v }}
+              {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+            {{- end }}
+          {{- end -}}
+        >{{- $.Params.text }}</a>
+      {{- else }}
+        {{- $.Params.text }}
+      {{- end }}
+    </div>
+  </div>
+{{- end }}
+

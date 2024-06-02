@@ -1,6 +1,6 @@
 ---
 title: その他
-weight: 10
+weight: 100
 params: 
   widget: blank
 ---
