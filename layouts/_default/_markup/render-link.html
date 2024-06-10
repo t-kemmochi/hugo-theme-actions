@@ -1,4 +1,1 @@
-{{/*  Open external link in new tab.   */}}
-{{/*  cf. https://digitaldrummerj.me/hugo-links-to-other-pages/  */}}
-
 <a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if or (strings.HasPrefix .Destination "http") (strings.HasPrefix .Destination "https") }} target="_blank"{{ end }} >{{ .Text | safeHTML }}</a>

@@ -7,7 +7,7 @@
 
   {{- with $homepage := .Site.GetPage $path_homepage }}
     {{- range $current_widget := where (sort (.Resources.ByType "page") ".Weight") ".Language.Lang" $language }}
-      {{ $widget_id := or .Params.id .File.ContentBaseName }}
+      {{ $widget_id := or .Params.id .Title | strings.ToLower }}
       {{ partial "widgets/common.html" (dict "current_widget" . "widget_id" $widget_id "homepage" $homepage) }}
     {{- end }}
   {{- end }}

@@ -41,14 +41,14 @@ params:
   capitalize = false
 >}}
 
-{{< icontext 
+{{< icontext2 
   text = "Test"
   iconset = "fa"
   icon ="map-location-dot" 
 >}}
 
 
-{{< icontext 
+{{< icontext2 
   text = "Laboratory"
   iconset = "fa"
   icon ="users" 
@@ -58,34 +58,34 @@ params:
 
 
 
-{{% icontexttest
+{{% icontext
   iconset = "fa"
   icon ="users" 
-%}}Laboratory4{{% /icontexttest %}}
+%}}Laboratory4{{% /icontext %}}
 
 
 
-{{% icontexttest
+{{% icontext
   iconset = "fa"
   icon ="user" 
-%}}[Laboratory5](https://na.nuap.nagoya-u.ac.jp){{% /icontexttest %}}
+%}}[Laboratory5](https://na.nuap.nagoya-u.ac.jp){{% /icontext %}}
 
-{{% icontexttest
+{{% icontext
   iconset = "fa"
   icon ="user" 
-%}}`Laboratory6`{{% /icontexttest %}}
+%}}`Laboratory6`{{% /icontext %}}
 
 
 
-{{< icontexttest
+{{< icontext
   iconset = "fa"
   icon ="user" 
->}}Laboratory2{{< /icontexttest >}}
+>}}Laboratory2{{< /icontext >}}
 
 
-{{< icontexttest
+{{< icontext
   iconset = "fa"
   icon ="user" 
 >}}
   Laboratory3
-{{< /icontexttest >}}
+{{< /icontext >}}

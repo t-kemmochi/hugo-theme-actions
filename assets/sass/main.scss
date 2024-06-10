@@ -55,6 +55,15 @@ h1, h2, h3, h4, h5, h6 {
 //   font-size: 1.2rem;
 // }
 
+
+
+
+.body-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 // ヘッダー部の背景部分
 .header-container {
   font-family: Montserrat, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
@@ -113,6 +122,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   font-weight: 700;
   font-size: 1.6rem;
+  transition: 0.5s;
+  &:hover {
+    color: #03451f;
+  }
   @include media(tablet_phone) {
     font-size: 1.5rem;
   }
@@ -226,6 +239,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-menu-item {
   list-style-type: none;
+  padding: 0rem 0.5rem;
 }
 
 
@@ -233,7 +247,14 @@ h1, h2, h3, h4, h5, h6 {
 .header-menu-link {
   display: block;
   color: $color-nav-link;
-  padding: 0.5rem;
+  padding: 0.5rem 0rem;
+  transition: 0.5s;
+  @include media(pc) {
+    &:hover {
+      box-shadow: 0px -2px  #03451f inset;
+      // background-color: rgba(0,0,0,0.05);
+    }
+  }
   
   &.current-page, &.ancestor-page {
     font-weight: 600;
@@ -275,12 +296,23 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: $color-nav-link;
   font-size: 1.1rem;
-  
+  padding: 0.5rem 0rem;
+  transition: 0.5s;
+  @include media(pc) {
+    &:hover {
+      box-shadow: 0px -2px  #03451f inset;
+      // background-color: rgba(0,0,0,0.05);
+    }
+  }
   @include media(tablet_phone) {
     font-size: 1rem;
+    padding: 0rem;
   }
 }
 
+.main-container {
+  flex: 1;
+}
 
 
 .home-heading {
@@ -331,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
   flex: 2;
   width: 100%;
   // background-color: #eeffee;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 
   h3 {
     font-weight: 700;

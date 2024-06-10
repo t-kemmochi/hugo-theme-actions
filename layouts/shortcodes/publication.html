@@ -1,0 +1,42 @@
+{{- $_hugo_config := `{ "version": 1 }` }}
+<p>
+    <span class="author">{{- .Get "author" }}. </span>
+    <span class="title">{{- .Get "title" }}. </span> 
+    <span class="journal">
+        <span class="journal_name">{{- .Get "journal" }},</span> 
+        {{- with .Get "volume" }}
+            vol. {{.}},
+        {{- end }}
+        {{- with .Get "number" }}
+            no. {{.}},
+        {{- end }}
+        {{- with .Get "pages" }}
+            pp. {{.}},
+        {{- end }}
+        {{- .Get "year" }}. 
+    </span>
+    {{- with .Get "doi" }}
+        <span class="DOI">
+            DOI: <a href="https://doi.org/{{.}}" target="_blank" rel="noopener">{{.}}</a>
+        </span>
+    {{- end }}
+</p>
+<p>
+    {{- with .Get "journal_link"}}
+        [<a href="{{.}}" target="_blank" rel="noopener">Journal</a>]
+    {{- end }}
+    {{- with .Get "mrnumber"}}
+        [<a href="https://mathscinet.ams.org/mathscinet-getitem?mr={{.}}" target="_blank" rel="noopener">MR{{.}}</a>]
+    {{- end }}
+    {{- with .Get "zbmath"}}
+        [<a href="https://zbmath.org/?q=an:{{.}}" target="_blank" rel="noopener">Zbl {{.}}</a>]
+    {{- end }}
+    {{- with .Get "arxiv"}}
+        [<a href="https://arxiv.org/abs/{{.}}" target="_blank" rel="noopener">arXiv</a>]
+    {{- end }}
+</p>
+{{- with .Inner }}
+    <p>
+        {{- . | markdownify }}
+    </p>
+{{- end }}

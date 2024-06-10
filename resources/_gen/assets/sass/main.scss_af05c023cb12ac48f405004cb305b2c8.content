@@ -15,6 +15,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Montserrat, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
+.body-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .header-container {
   font-family: Montserrat, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-optical-sizing: auto;
@@ -67,6 +73,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   font-weight: 700;
   font-size: 1.6rem;
+  transition: 0.5s;
+}
+.header-title:hover {
+  color: #03451f;
 }
 @media screen and (max-width: 999px) {
   .header-title {
@@ -166,12 +176,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-menu-item {
   list-style-type: none;
+  padding: 0rem 0.5rem;
 }
 
 .header-menu-link {
   display: block;
   color: #03451f;
-  padding: 0.5rem;
+  padding: 0.5rem 0rem;
+  transition: 0.5s;
+}
+@media screen and (min-width: 1000px) {
+  .header-menu-link:hover {
+    box-shadow: 0px -2px #03451f inset;
+  }
 }
 .header-menu-link.current-page, .header-menu-link.ancestor-page {
   font-weight: 600;
@@ -211,11 +228,23 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: #03451f;
   font-size: 1.1rem;
+  padding: 0.5rem 0rem;
+  transition: 0.5s;
+}
+@media screen and (min-width: 1000px) {
+  .header-language-link:hover {
+    box-shadow: 0px -2px #03451f inset;
+  }
 }
 @media screen and (max-width: 999px) {
   .header-language-link {
     font-size: 1rem;
+    padding: 0rem;
   }
+}
+
+.main-container {
+  flex: 1;
 }
 
 .home-heading {
@@ -260,7 +289,7 @@ h1, h2, h3, h4, h5, h6 {
 .widget-content-second {
   flex: 2;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .widget-content-second h3 {
   font-weight: 700;

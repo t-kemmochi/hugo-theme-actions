@@ -1,0 +1,12 @@
+
+<p>
+    {{ with .Get "author" }}
+        <span class="author">{{.}}. </span>
+    {{ end }}
+    {{ with .Get "title" }}
+        <span class="title">{{.}}. </span> 
+    {{ end }}
+    {{ with .Get "arxiv"}}
+        <a href="https://arxiv.org/abs/{{.}}" target="_blank" rel="noopener">arXiv:{{.}}</a>
+    {{ end }}
+</p>

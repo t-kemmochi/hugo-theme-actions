@@ -8,12 +8,21 @@ ja:
       - name: Home
         pageRef: /
         weight: 10
-      - name: Posts
-        pageRef: /posts
+      - name: CV
+        pageRef: /cv
         weight: 20
+      - name: Research
+        pageRef: /research
+        weight: 30
+      - name: Publications
+        pageRef: /publications
+        weight: 40
+      - name: Talks
+        pageRef: /talks
+        weight: 50
       - name: Memo
         pageRef: /memo
-        weight: 30
+        weight: 70
 en: 
   languageCode: en-us
   languageName: English
@@ -24,6 +33,18 @@ en:
       - name: Home
         pageRef: /
         weight: 10
-      - name: Posts
-        pageRef: /posts
+      - name: CV
+        pageRef: /cv
         weight: 20
+      - name: Research
+        pageRef: /research
+        weight: 30
+      - name: Publications
+        pageRef: /publications
+        weight: 40
+      - name: Talks
+        pageRef: /talks
+        weight: 50
+      - name: Memo
+        pageRef: /memo
+        weight: 70

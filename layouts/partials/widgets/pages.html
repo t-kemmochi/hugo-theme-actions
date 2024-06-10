@@ -15,8 +15,18 @@ Pagination widget.
   <div class="widget-content-second">
     {{- with .Site.GetPage .Params.directory }}
       {{- range first (default 3 $current_widget.Params.pagination) .Pages.ByDate.Reverse }}
+        {{- $attrs := dict "href" (or .Params.external_link .RelPermalink) "class" "pages-link" }}
+        {{- if .Params.external_link }}
+          {{- $attrs = merge $attrs (dict "target" "_blank") }}
+        {{- end }}
         <div class="pages-container">
-          <h3><a href="{{ .RelPermalink }}" class="pages-link">{{- .Title }}</a></h3> 
+          <h3><a 
+            {{- range $k, $v := $attrs }}
+              {{- with $v }}
+                {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+              {{- end }}
+            {{- end -}}
+          >{{- .Title }}</a></h3> 
           {{/*  {{- .Date }}  */}}
           {{- with .GetTerms "categories" }}
             {{- with (index . 0) }}

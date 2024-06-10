@@ -1,0 +1,19 @@
+---
+# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+
+title: "2022-01-03"
+summary: ""
+date: 2022-01-03
+---
+
+
+
+論文が掲載されました:  
+Tomoya Kemmochi and Shun Sato.  
+**Scalar auxiliary variable approach for conservative/dissipative partial differential equations with unbounded energy functionals.**  
+BIT Numer. Math.  
+DOI: [10.1007/s10543-021-00904-w](https://doi.org/10.1007/s10543-021-00904-w)  
+[[Journal](https://link.springer.com/article/10.1007%2Fs10543-021-00904-w)]
+[[arXiv](https://arxiv.org/abs/2105.04055)]
+
+<!--more--> 
