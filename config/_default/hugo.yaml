@@ -1,6 +1,6 @@
 title: My New Hugo Site
 theme: test
-baseURL: https://t-kemmochi.github.io/hugo-theme-actions/
+baseURL: https://t-kemmochi.netlify.app
 
 defaultContentLanguage: ja
 defaultContentLanguageInSubdir: true
