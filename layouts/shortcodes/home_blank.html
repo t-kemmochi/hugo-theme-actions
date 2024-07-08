@@ -1,0 +1,22 @@
+{{- /*
+Blank widget. Show any contents.
+
+variables
+- title (string)
+- id (string)
+*/}}
+
+
+{{- $widget_id := or $.Params.id $.Params.title | strings.ToLower -}}
+  
+{{/*  Blank section  */}}
+<section id="{{ $widget_id }}" class="widget-container">
+  <div class="widget-content">
+    <div class="widget-content-first">
+      <h2 class="widget-heading">{{- .Get "title" }}</h2>
+    </div>
+    <div class="widget-content-second">
+      {{- .InnerDeindent -}}
+    </div>
+  </div>
+</section>

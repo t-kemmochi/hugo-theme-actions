@@ -4,7 +4,9 @@
 title: "Research"
 date: 2019-08-22
 lastmod: 2023-03-23
-
+description: 剱持の研究について
+params: 
+   show_date: false
 ---
 
 

@@ -1,5 +1,5 @@
 {{- $_hugo_config := `{ "version": 1 }` }}
-<p>
+<div>
     <span class="author">{{- .Get "author" }}. </span>
     <span class="title">{{- .Get "title" }}. </span> 
     <span class="journal">
@@ -20,8 +20,8 @@
             DOI: <a href="https://doi.org/{{.}}" target="_blank" rel="noopener">{{.}}</a>
         </span>
     {{- end }}
-</p>
-<p>
+</div>
+<div>
     {{- with .Get "journal_link"}}
         [<a href="{{.}}" target="_blank" rel="noopener">Journal</a>]
     {{- end }}
@@ -34,9 +34,9 @@
     {{- with .Get "arxiv"}}
         [<a href="https://arxiv.org/abs/{{.}}" target="_blank" rel="noopener">arXiv</a>]
     {{- end }}
-</p>
+</div>
 {{- with .Inner }}
-    <p>
+    <div>
         {{- . | markdownify }}
-    </p>
+    </div>
 {{- end }}

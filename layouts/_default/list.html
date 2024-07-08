@@ -1,8 +1,29 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+
+  {{ $pages_per_page := default 5 $.Params.paginate }}
+
+  <div class="page-list-container">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    {{ range (.Paginate .Pages $pages_per_page).Pages }}
+      <div class="page-list-item">
+        <h2><a href="{{ .RelPermalink }}" class="page-list-link">{{ .LinkTitle }}</a></h2>
+        {{ .Summary }}
+        {{- with .Params.authors }}
+          <div class="pages-author">
+            {{- range .}}
+              {{- . }}
+            {{- end }}
+          </div>
+        {{- end }}
+        <div class="page-list-cta">
+          <a href="{{ .RelPermalink }}">Read more<i class="fa-solid fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    {{ end }}
+
+    
+    {{ template "_internal/pagination.html" . }}
+  </div>
 {{ end }}
+

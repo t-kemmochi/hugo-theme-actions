@@ -1,11 +1,13 @@
 ---
 title: "Publications"
-summary: "Publication list of Tomoya Kemmochi"
+description: "Publication list of Tomoya Kemmochi"
 date: 2019-08-22
 lastmod: 2024-04-11
+params: 
+   show_date: false
+   math: true
 ---
 
-<div class="publication">
 
 Please see also 
 [MathSciNet](https://mathscinet.ams.org/mathscinet/search/author.html?mrauthid=1179149), 
@@ -15,6 +17,9 @@ Please see also
 
 
 ## Preprints
+
+
+<div class="publication-list">
 
 1. {{< preprint 
    author="Tomoya Kemmochi"  
@@ -34,7 +39,11 @@ Please see also
    arxiv="2208.00675"
 >}}
 
+</div>
+
 ## Reviewed articles
+
+<div class="publication-list">
 
 1. {{< publication 
    author="Takahito Kashiwabara and Tomoya Kemmochi"  
@@ -47,8 +56,7 @@ Please see also
    doi=""
    journal_link=""
    arxiv="2306.11365"
->}}
-{{< /publication >}}
+/>}}
 
 1. {{< publication 
    author="Yuki Satake, Tomohiro Sogabe, Tomoya Kemmochi, and Shao-Liang Zhang"  
@@ -61,8 +69,7 @@ Please see also
    doi=""
    journal_link=""
    arxiv="2306.15359"
->}} 
-{{< /publication >}}
+/>}} 
 
 1. {{< publication 
    author="Tomoya Kemmochi and Tatsuya Miura"  
@@ -74,8 +81,7 @@ Please see also
    doi="10.1016/j.matpur.2024.02.003"
    journal_link="https://www.sciencedirect.com/science/article/pii/S0021782424000230"
    arxiv="2303.12516"
->}}
-{{< /publication >}}
+/>}}
 
 1. {{< publication 
    author="Ren-Jie Zhao, Tomohiro Sogabe, Tomoya Kemmochi, and Shao-Liang Zhang"  
@@ -87,8 +93,7 @@ Please see also
    year="2024" 
    doi="10.1016/j.amc.2023.128155"
    journal_link="https://onlinelibrary.wiley.com/doi/10.1002/nla.2538"
->}} 
-{{< /publication >}}
+/>}} 
 
 1. {{< publication 
    author="Jing Niu, Tomohiro Sogabe, Lei Du, Tomoya Kemmochi, and Shao-Liang Zhang"  
@@ -100,8 +105,7 @@ Please see also
    year="2023" 
    doi="10.1016/j.amc.2023.128155"
    journal_link="https://www.sciencedirect.com/science/article/pii/S0096300323003247"
->}} 
-{{< /publication >}}
+/>}} 
 
 1. {{< publication 
    author="Eiji Miyazaki, Tomoya Kemmochi, Tomohiro Sogabe, and Shao-Liang Zhang"  
@@ -114,8 +118,7 @@ Please see also
    doi="10.4208/cmr.2022-0040"
    journal_link="https://global-sci.org/intro/article_detail/cmr/21549.html"
    arxiv="2208.12473"
->}} 
-{{< /publication >}}
+/>}} 
 
 1. {{< publication 
    author="Tomoya Kemmochi and Shun Sato"  
@@ -129,8 +132,7 @@ Please see also
    journal_link="https://link.springer.com/article/10.1007%2Fs10543-021-00904-w"
    zbmath="07569612"
    arxiv="2105.04055"
->}} 
-{{< /publication >}}
+/>}} 
 
 1. {{< publication 
    author="Fuminori Tatsuoka, Tomohiro Sogabe, Yuto Miyatake, Tomoya Kemmochi, and Shao-Liang Zhang"  
@@ -145,8 +147,7 @@ Please see also
    mrnumber="4310720"
    zbmath="1475.65025"
    arxiv="2012.01667"
->}} 
-{{< /publication >}}
+/>}} 
 
 
 1. {{< publication 
@@ -161,8 +162,7 @@ Please see also
    journal_link="https://www.tandfonline.com/doi/full/10.1080/10556788.2020.1734004"
    mrnumber="4144128"
    zbmath="1475.15017"
->}} 
-{{< /publication >}}
+/>}} 
 
 
 1. {{< publication 
@@ -178,8 +178,7 @@ Please see also
    mrnumber="4081914"
    zbmath="1436.65139"
    arxiv="1805.01336"
->}} 
-{{< /publication >}}
+/>}} 
 
 1. {{< publication 
    author="Takahito Kashiwabara and Tomoya Kemmochi"  
@@ -194,8 +193,7 @@ Please see also
    mrnumber="4071825"
    zbmath="1437.65195"
    arxiv="1804.00390"
->}} 
-{{< /publication >}}
+/>}} 
 
 
 
@@ -210,9 +208,7 @@ Please see also
    journal_link="https://www.jstage.jst.go.jp/article/jsiaml/11/0/11_77/_article"
    mrnumber="4047802"
    zbmath="1434.65130"
->}}
-{{< /publication >}}
-
+/>}}
 
 1. {{< publication
    author="Tomoya Kemmochi"  
@@ -226,8 +222,7 @@ Please see also
    journal_link="http://jmre.dlut.edu.cn/en/ch/reader/view_abstract.aspx?file_no=20190614&flag=1"
    mrnumber="4165358"
    zbmath="1449.65187"
->}}
-{{< /publication >}}
+/>}}
 
 1. {{< publication 
    author="Yuki Satake, Masaya Oozawa, Tomohiro Sogabe, Yuto Miyatake, Tomoya Kemmochi, and Shao-Liang Zhang"  
@@ -240,8 +235,7 @@ Please see also
    journal_link="https://www.sciencedirect.com/science/article/pii/S0893965919301533"
    mrnumber="3943431"
    zbmath="1420.15014"
->}}
-{{< /publication >}}
+/>}}
 
 1. {{< publication 
    author="Tomoya Kemmochi"  
@@ -273,8 +267,7 @@ Please see also
    mrnumber="3923026"
    zbmath="1409.74016"
    arxiv="1604.03400"
->}}
-{{< /publication >}}
+/>}}
 
 1. {{< publication 
    author="Tomoya Kemmochi and Norikazu Saito"  
@@ -328,8 +321,11 @@ Please see also
 [[Preprint](http://www.ms.u-tokyo.ac.jp/preprint/pdf/2015-6.pdf)]
 {{< /publication >}}
 
+</div>
 
 ## Reviewed articles in Japanese
+
+<div class="publication-list">
 
 1. 川畑佑典、三浦達彦、渡邉陽太、池祐一、江間陽平、 剱持智哉、松原宰栄、米田剛、千葉優作、柏原崇人.
 [磁気流体緩和法の初期条件依存性 ∼force-free alphaの空間分布∼](https://www.ms.u-tokyo.ac.jp/lmsr/pdf/2018-10.pdf).
@@ -339,8 +335,12 @@ Please see also
 [磁気流体緩和法の初期条件依存性 ∼磁力線形状とエネルギー∼](https://www.ms.u-tokyo.ac.jp/lmsr/pdf/2018-20.pdf).
 [数理科学実践研究レター](https://www.ms.u-tokyo.ac.jp/lmsr/2018/), 2018.
 
+</div>
 
 ## Non-reviewed articles
+
+
+<div class="publication-list">
 
 1. 剱持智哉.
 [Scalar auxiliary variable approachの紹介とその拡張](https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/261522/1/2167-11.pdf).

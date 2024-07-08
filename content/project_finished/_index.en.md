@@ -1,10 +1,6 @@
 ---
 title: Finished projects
-
-# View.
-#   1 = List
-#   2 = Compact
-#   3 = Card
-view: 3
-
+description: List of finished projects
+params:
+  math: true
 ---

@@ -4,9 +4,9 @@ id: biography
 weight: 10
 params: 
   widget: about # or pages or blank
-  # photo: 
-  #   file: character_boy_normal.png #画像は homeディレクトリ下, ここに書くパスはhome以下の相対パス
-  #   shape: circle # or square
+  photo: 
+    file: profile.png #画像は homeディレクトリ下, ここに書くパスはhome以下の相対パス
+    shape: circle # or square
 ---
 
 剱持 智哉 (けんもち ともや)

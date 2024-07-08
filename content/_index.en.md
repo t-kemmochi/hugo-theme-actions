@@ -1,6 +1,7 @@
 ---
 title: Home
-date: 2023-01-01T08:00:00-07:00
+description: This is Tomoya Kemmochi's web site. Tomoya Kemmochi is an assistant professor of Graduate School of Engineering, Nagoya University, Japan, and is working on numerical analysis for partial differential equations.
+date: 2024-07-08
 draft: false
 ---
 

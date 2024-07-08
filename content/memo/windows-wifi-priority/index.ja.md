@@ -10,7 +10,7 @@ lastmod:
  
 Powershellなどで
 
-```
+```bash
 netsh wlan set profileorder name="ネットワーク名" interface="Wi-Fi" priority=数字
 ```
 
@@ -18,19 +18,19 @@ netsh wlan set profileorder name="ネットワーク名" interface="Wi-Fi" prior
 <!--more-->
 他には
 
-```
+```bash
 netsh wlan show profiles
 ```
 
 でネットワークの一覧を取得,
 
-```
+```bash
 netsh wlan delete profile "ネットワーク名"
 ```
 
 でネットワークの削除,
 
-```
+```bash
 netsh wlan ?
 ```
 

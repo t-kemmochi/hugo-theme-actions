@@ -1,12 +1,9 @@
 ---
-# Documentation: https://sourcethemes.com/academic/docs/managing-content/
-
 title: "Curriculum Vitae"
-summary: ""
 date: 2019-08-22T11:22:51+09:00
 lastmod: 2021-09-07
-featured: false
-draft: false
+params: 
+   show_date: false
 
 ---
 

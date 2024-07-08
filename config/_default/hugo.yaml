@@ -1,5 +1,4 @@
-title: My New Hugo Site
-theme: test
+title: T. Kemmochi
 baseURL: https://t-kemmochi.netlify.app
 
 defaultContentLanguage: ja
@@ -25,6 +24,22 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - $
+            - $
+        enable: true
 
 taxonomies:
   category: categories
+
+params:
+  math: false
+  author: Tomoya Kemmochi

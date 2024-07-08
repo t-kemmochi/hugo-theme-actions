@@ -2,28 +2,35 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Talks"
+description: List of talks of Tomoya Kemmochi
 date: 2019-08-22
 lastmod: 2023-03-23
-
+params: 
+  show_date: false
+  math: true
 ---
-
-<div class="publication">
 
 
 ## 2023
 
+<div class="publication-list">
+
 1. T. Kemmochi, Y. Miyatake, and K. Sakakibara. Structure-preserving numerical methods for constrained gradient flows of planar closed curves with explicit tangential velocities. [ICIAM 2023](https://iciam2023.org/), Waseda University, August 20th--25th, 2023.
+
+</div>
 
 ## 2022
 
-
+<div class="publication-list">
 
 1.  {{< invited >}} T. Kemmochi. $L^p$-resolvent estimate for finite element approximation of the Stokes operator.  [Online seminar of the Institute of Fundamental and Frontier Sciences](https://www.iffs.uestc.edu.cn/info/1050/5133.htm), the University of Electronic Science and Technology of China, December 7th, 2022.
 2.  {{< invited >}} T. Kemmochi. Higher-order discrete gradient methods by discontinuous Galerkin time-stepping methods. [JSPS seminar: Topics in computational methods for stochastic and deterministic differential equations](https://www.chalmers.se/sv/institutioner/math/forskning/konferenser-pa-MV/Sidor/JSPS22.aspx), Chalmers University of Technology / University of Gothenburg, Gothenburg, Sweden, October 24th--25th, 2022. [Talk: Oct. 24th]
 
-
+</div>
 
 ## 2020
+
+<div class="publication-list">
 
 1. {{< invited >}} 
 T. Kemmochi. Structure-preserving numerical methods for constrained gradient flows
@@ -31,8 +38,11 @@ of planar curves.
 ZOOM online colloquium at Department of Applied Mathematics, The Hong Kong Polytechnic University,
 online, September 30th, 2020.
 
+</div>
 
 ## 2019
+
+<div class="publication-list">
 
 1. Tomoya Kemmochi.
 Structure-preserving numerical scheme for the area-preserving curve shortening flow.
@@ -44,8 +54,11 @@ Maximum norm error estimates for linear finite element semi-discretization of pa
 [Conference on Mathematical, Physical and Intelligent Sciences 2019](http://pjsci.dlut.edu.cn/info/1131/2181.htm),
 Dalian University of Technology, Dalian/Panjin, China, June 26--30, 2019. [June 29th]
 
+</div>
 
 ## 2018
+
+<div class="publication-list">
 
 1. {{< invited >}}
 T. Kemmochi. Energy dissipative numerical schemes for gradient flows of planar curves.
@@ -70,8 +83,11 @@ The University of Tokyo (Hongo campus), Tokyo, Japan, March 12, 2018.
 Graduate School of Mathematical Sciences, The University of Tokyo, Tokyo, Japan,
 February 2nd, 2018.
 
+</div>
 
 ## 2017
+
+<div class="publication-list">
 
 1.  {{< invited >}}
 T. Kemmochi. Energy dissipative numerical schemes for gradient flows of planar curves.
@@ -88,8 +104,11 @@ T. Kemmochi. Error estimate for the finite element semi-discretization of the no
 [The 14th Japanese-German International Workshop on Mathematical Fluid Dynamics](http://www.japan-germany.sci.waseda.ac.jp/event/201703/),
 Waseda University, Tokyo, Japan, March 8--10, 2017.
 
+</div>
 
 ## 2016
+
+<div class="publication-list">
 
 1.  {{< invited >}}
 T. Kemmochi. Discretization of maximal regularity and its application to the finite element method.
@@ -105,8 +124,11 @@ Discrete maximal regularity and the finite element method for parabolic problems
 [NIMS](https://www.nims.re.kr/eng/index), Daejeon, Korea, August 22-26, 2016.
 9. T. Kemmochi, Discrete maximal regularity and the finite element method for parabolic problems, [EASIAM 2016](http://161.64.198.10/EASIAM2016/), University of Macau, Macau, China, June 20-22, 2016.
 
+</div>
 
 ## 2015
+
+<div class="publication-list">
 
 1. T. Kemmochi, Numerical analysis on shapes of membranes on rippled surfaces with adhesion,
 [The 2nd Joint Workshop of A3 Foresight Program](http://www.wpi-aimr.tohoku.ac.jp/mathematics_unit/A3foresight_en/workshop/20151126-29.html),
@@ -115,6 +137,5 @@ Xiamen Golden Bay Hotel/Xiameng University, Xiamen, China, November 26-29, 2016.
 4.  {{< invited >}}
 T. Kemmochi, Numerical analysis on shapes of membranes on rippled surfaces with adhesion, [Mathematical Aspects of Surface and Interface Dynamics 10](http://www.ms.u-tokyo.ac.jp/~labgiga/conf_etc_info/sympo_mdv15/sympo_mdv15_hp.html), Univ. of Tokyo, Tokyo, Japan, October 28-30, 2015.
 7.  ○T. Kemmochi, N. Saito, Discrete maximal regularity for abstract Cauchy problems and its application to the finite element method, [ICIAM2015](http://www.iciam2015.cn/), China National Convention Center, 10-14, August 2015.
-
 
 </div>

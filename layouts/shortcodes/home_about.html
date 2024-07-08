@@ -1,0 +1,39 @@
+{{- /*
+About widget. Show profiles.
+
+variables
+- title (string)
+- id (string)
+- photo_active (bool)
+- photo_circle (bool) 
+*/}}
+
+
+{{- $widget_id := or $.Params.id $.Params.title | strings.ToLower -}}
+  
+{{/*  About section  */}}
+<section id="{{ $widget_id }}" class="widget-container">
+  <div class="widget-content">
+    {{- if $.Params.photo_active }}
+      {{- with or (resources.Get "images/profile.jpg") (resources.Get "images/profile.png") }}
+        <div class="widget-content-first">
+          <aside class="about-photo-container">
+            {{- $photo := .Fill "300x300 Smart" }}
+            {{- $classes := "about-photo" }}
+            {{- if $.Params.photo_circle }}
+              {{- $classes = print $classes " about-photo-circle" }}
+            {{- end }}
+            <img src="{{ $photo.RelPermalink }}" 
+              class="{{ $classes }}"
+              width=300 height=300
+            >
+          </aside>
+        </div>
+      {{- end }}
+    {{- end }}
+    <div class="widget-content-second">
+      <h2 class="widget-heading">{{- .Get "title" }}</h2>
+      {{- .InnerDeindent -}}
+    </div>
+  </div>
+</section>

@@ -35,9 +35,18 @@ Pagination widget.
               </div>
             {{- end }}
           {{- end }}
-          <div class="pages-summary">
-            {{- .Summary }}
-          </div>
+          {{- with .Summary }}
+            <div class="pages-summary">
+              {{- . }}
+            </div>
+          {{- end }}
+          {{- with .Params.authors }}
+            <div class="pages-author">
+              {{- range .}}
+                {{- . }}
+              {{- end }}
+            </div>
+          {{- end }}
         </div>
       {{- end }}
       

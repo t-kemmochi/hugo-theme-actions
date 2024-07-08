@@ -2,20 +2,28 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Talks"
+description: List of talks of Tomoya Kemmochi
 date: 2019-08-22
 lastmod: 2024-04-11
+params: 
+  show_date: false
+  math: true
 
 ---
 
-<div class="publication">
 
 ## 2023
+
+<div class="publication-list">
 
 1. T. Kemmochi, Y. Miyatake, and K. Sakakibara. Structure-preserving numerical methods for constrained gradient flows of planar closed curves with explicit tangential velocities. [ICIAM 2023](https://iciam2023.org/), Waseda University, August 20th--25th, 2023.
 1. 剱持智哉. Stokes作用素の有限要素近似に対する離散最大正則性. [日本応用数理学会 第19回 研究部会連合発表会](https://jsiam.org/union2023), 岡山理科大学, 2023年3月8日--10日. [発表: 3月9日]
 
+</div>
 
 ## 2022 
+
+<div class="publication-list">
 
 1. 剱持智哉. Stokes作用素の有限要素近似に対する離散最大正則性. [2022年度応用数学合同研究集会](https://www.mathsoc.jp/section/appliedmath/CAM/2022/), 龍谷大学瀬田キャンパス, 2022年12月15日--17日. [発表: 12月17日]
 2.  {{< invited >}} T. Kemmochi. $L^p$-resolvent estimate for finite element approximation of the Stokes operator. [基础论坛 第233期](https://www.iffs.uestc.edu.cn/info/1050/5133.htm) at the Institute of Fundamental and Frontier Sciences, the University of Electronic Science and Technology of China (online), 2022年12月7日.
@@ -26,13 +34,21 @@ lastmod: 2024-04-11
 7. 剱持智哉. Stokes作用素の有限要素近似に対する$L^p$リゾルベント評価. [日本応用数理学会2022年度年会](https://jsiam.org/annual2022/), 北海道大学, 2022年9月8日--10日. [発表: 9月8日]
 8.  {{< invited >}} 剱持智哉. Stokes作用素の有限要素近似に対する$L^p$リゾルベント評価. [名古屋微分方程式セミナー](https://www.math.nagoya-u.ac.jp/~jkato/NDES/index.html), 名古屋大学大学院多元数理科学研究科, 2022年6月6日.
 
+</div>
+
 ## 2021
+
+<div class="publication-list">
 
 1.  {{< invited >}} 剱持智哉. 不連続Galerkin時間離散化手法による離散勾配法の高精度化. [第83回 京大応用数学セミナー](https://www.math.kyoto-u.ac.jp/applied-math/kuams/records2021.html), オンライン, 2021年10月26日.
 2. 剱持智哉. 不連続Galerkin時間離散化手法による離散勾配法の高精度化. [応用数理学会2021年度年会](https://annual2021.jsiam.org/), オンライン, 2021年9月7--9日. [発表: 9月9日]
 3. 剱持智哉. Cahn-Hilliard方程式に対して構造保存解法とアダプティブ有限要素法を両立させたい. [第2回若手研究交流会](http://wakate.jsiam.org/?p=49), オンライン, 2021年9月6日.
 
+</div>
+
 ## 2020
+
+<div class="publication-list">
 
 1. {{< invited >}} 
 T. Kemmochi. Structure-preserving numerical methods for constrained gradient flows
@@ -48,7 +64,11 @@ online, September 30th, 2020.
 [未来の社会システム創造のための応用数理](https://sites.google.com/view/2020324/),
 東京大学大学院数理科学研究科, 東京都目黒区, 2020年3月24日.~~ 新型コロナウイルスのため中止
 
+</div>
+
 ## 2019
+
+<div class="publication-list">
 
 1. {{< invited >}} 
 剱持智哉. 重調和方程式に対する$C^0$内部ペナルティ法の解析.
@@ -88,7 +108,11 @@ AOSSA, 福井県福井市, 2019年6月10日～12日. [6月11日]
 [不連続Galerkin 有限要素法の数学理論とその周辺：これからの展開](http://www.infsup.jp/saito/ws/190213_15hakata_v4.pdf),
 アクロス福岡, 福岡県福岡市, 2019年2月13日--15日. [2月15日]
 
+</div>
+
 ## 2018
+
+<div class="publication-list">
 
 1. ○中野航輔, 宮武勇登, 剱持智哉, 曽我部知広, 張紹良.
   反応拡散方程式に対する修正 Strang splitting 解法について.
@@ -142,8 +166,11 @@ The University of Tokyo (Hongo campus), Tokyo, Japan, March 12, 2018.
 Graduate School of Mathematical Sciences, The University of Tokyo, Tokyo, Japan,
 February 2nd, 2018.
 
+</div>
 
 ## 2017
+
+<div class="publication-list">
 
 1. 剱持智哉. DG time-stepping法に対する半群論的なアプローチ.
 [2017年度応用数学合同研究集会](http://infoshako.sk.tsukuba.ac.jp/~cam/2017/),
@@ -187,8 +214,11 @@ Waseda University, Tokyo, Japan, March 8--10, 2017.
 [非線形現象と高精度高品質数値解析](http://www.infsup.jp/saito/ws/170213_15toyama_full3.pdf),
 富山大学人間発達科学部, 2017年2月13日--15日.
 
+</div>
 
 ## 2016
+
+<div class="publication-list">
 
 1.  {{< invited >}}
 剱持智哉. 偏微分方程式に対する有限要素法における諸問題.
@@ -223,8 +253,11 @@ Discrete maximal regularity and the finite element method for parabolic problems
 10.  {{< invited >}}
 剱持智哉, 2階楕円型方程式の有限要素近似に対する離散最大値原理とその応用, [偏微分方程式の最大値原理とその周辺](http://www.math.sci.hokudai.ac.jp/sympo/160304/), 北海道大学理学部, 2016年3月4日.
 
+</div>
 
 ## 2015
+
+<div class="publication-list">
 
 1. T. Kemmochi, Numerical analysis on shapes of membranes on rippled surfaces with adhesion,
 [The 2nd Joint Workshop of A3 Foresight Program](http://www.wpi-aimr.tohoku.ac.jp/mathematics_unit/A3foresight_en/workshop/20151126-29.html),
@@ -244,8 +277,11 @@ T. Kemmochi, Numerical analysis on shapes of membranes on rippled surfaces with 
 インフルエンザのためキャンセル.
 10. 剱持智哉, 抽象的Cauchy問題に対する離散最大正則性と有限要素法への応用, [FMSP院生集中講義](http://fmsp.ms.u-tokyo.ac.jp/FMSP1503.pdf), 東京大学数理科学研究科, 2015年3月5日-6日.
 
+</div>
 
 ## 2014
+
+<div class="publication-list">
 
 1.  ○剱持智哉, 齊藤宣一, 離散最大正則性の半線形熱方程式への応用, [2014年度応用数学合同研究集会](http://www-mmc.es.hokudai.ac.jp/CAM/2014/index.html), 龍谷大学瀬田キャンパス, 2014年12月18日-20日.
 2. 剱持智哉, 抽象的Cauchy問題に対する離散最大正則性と有限要素法への応用,
@@ -260,6 +296,5 @@ T. Kemmochi, Numerical analysis on shapes of membranes on rippled surfaces with 
 東京大学数理科学研究科, 2014年7月19日.
 [Poster]
 7. 剱持智哉, 有限要素法における最大値原理, [ワークショップ「数値流体シミュレーション手法とその数学的基盤」](http://www.infsup.jp/fvm/), 公共の宿「ふるさと荘」, 2014年5月17日-19日.
-
 
 </div>

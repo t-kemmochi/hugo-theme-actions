@@ -4,6 +4,9 @@
 title: "Research"
 date: 2019-08-22
 lastmod: 2023-03-23
+description: Research topics of Tomoya Kemmochi
+params: 
+   show_date: false
 ---
 
 

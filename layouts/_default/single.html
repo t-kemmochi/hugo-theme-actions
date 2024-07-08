@@ -1,10 +1,28 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
 
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+  <div class="single-container">
 
-  {{ .Content }}
-  {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
+    {{- $show_date := default true $.Params.show_date }}
+    {{- if $show_date }}
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format ":date_long" }}
+      <div class="show-date">
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        {{- if not (eq .Lastmod .Date) }}
+          {{ $dateMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" }}
+          {{ $dateHuman := .Lastmod | time.Format ":date_long" }}
+          <span class="lastmod">
+            Last modified: <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+          </span>
+        {{- end }}
+      </div>
+    {{- end }}
+    
+    <h1>{{ .Title }}</h1>
+    
+    <div class="single-content">
+      {{ .Content }}
+    </div>
+    {{ partial "terms.html" (dict "taxonomy" "categories" "page" .) }}
+  </div>
 {{ end }}
