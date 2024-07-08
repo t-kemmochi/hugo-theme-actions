@@ -261,6 +261,11 @@ code, pre {
   font-weight: 400;
   font-size: 3rem;
 }
+@media screen and (max-width: 999px) {
+  .home-heading {
+    font-size: 2rem;
+  }
+}
 
 .widget-container {
   width: 100%;
@@ -281,12 +286,18 @@ code, pre {
   .widget-content {
     flex-direction: column;
     align-items: center;
+    line-height: 1.5;
   }
 }
 
 .widget-heading {
   font-weight: 400;
   font-size: 2rem;
+}
+@media screen and (max-width: 999px) {
+  .widget-heading {
+    font-size: 1.8rem;
+  }
 }
 
 .widget-content-first {
@@ -299,9 +310,19 @@ code, pre {
   width: 100%;
   font-size: 1.2rem;
 }
+@media screen and (max-width: 999px) {
+  .widget-content-second {
+    font-size: 1.1rem;
+  }
+}
 .widget-content-second h3 {
   font-weight: 700;
   font-size: 1.5rem;
+}
+@media screen and (max-width: 999px) {
+  .widget-content-second h3 {
+    font-size: 1.3rem;
+  }
 }
 
 .about-photo-container {
@@ -381,13 +402,29 @@ code, pre {
   margin: 0rem auto;
   padding: 2rem 1rem;
 }
+@media screen and (max-width: 999px) {
+  .single-container {
+    padding: 1rem;
+  }
+}
 .single-container h1 {
   font-weight: 400;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
+@media screen and (max-width: 999px) {
+  .single-container h1 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+}
 .single-container .show-date {
   margin: 1rem 0rem;
+}
+@media screen and (max-width: 999px) {
+  .single-container .show-date {
+    margin: 0.5rem 0rem;
+  }
 }
 .single-container .show-date .lastmod {
   margin-left: 1rem;
@@ -397,6 +434,12 @@ code, pre {
   font-size: 1.25rem;
   line-height: 1.75;
 }
+@media screen and (max-width: 999px) {
+  .single-container .single-content {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
 .single-container .single-content h2 {
   font-weight: 400;
   font-size: 2rem;
@@ -404,10 +447,23 @@ code, pre {
   padding-bottom: 0rem;
   margin: 1.5rem 0rem 1rem 0rem;
 }
+@media screen and (max-width: 999px) {
+  .single-container .single-content h2 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    padding-bottom: 0.2rem;
+  }
+}
 .single-container .single-content h3 {
   font-weight: 700;
   font-size: 1.5rem;
   margin: 1rem 0rem 0.5rem 0rem;
+}
+@media screen and (max-width: 999px) {
+  .single-container .single-content h3 {
+    font-size: 1.2rem;
+    line-height: 1.25;
+  }
 }
 .single-container .single-content p, .single-container .single-content ol, .single-container .single-content ul {
   margin-bottom: 1rem;
@@ -522,4 +578,13 @@ code, pre {
 }
 .footer p {
   margin: 1rem;
+}
+@media screen and (max-width: 999px) {
+  .footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+  .footer p {
+    margin: 0.2rem;
+  }
 }

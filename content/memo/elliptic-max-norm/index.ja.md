@@ -9,6 +9,6 @@ params:
 ---
 
 Brenner-Scottの教科書のChapter 8にある, 楕円型方程式に対する有限要素法の$L^\infty$ノルム, $W^{1,\infty}$ノルムによる誤差評価の証明がわかりにくいので, 個人的な理解をメモしておく.
-→ [pdfファイル](fem-nax-norm.pdf).
+→ [pdfファイル](fem-max-norm.pdf).
 
 <!--more-->
