@@ -133,7 +133,7 @@ code, pre {
   }
   .header-navigation.is-active {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 3.5rem;
     left: 0rem;
     z-index: 100;
@@ -203,7 +203,7 @@ code, pre {
 @media screen and (max-width: 999px) {
   .header-menu-link {
     text-align: left;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem;
   }
 }
 
@@ -309,11 +309,6 @@ code, pre {
   flex: 2;
   width: 100%;
   font-size: 1.2rem;
-}
-@media screen and (max-width: 999px) {
-  .widget-content-second {
-    font-size: 1.1rem;
-  }
 }
 .widget-content-second h3 {
   font-weight: 700;

@@ -179,7 +179,7 @@ code, pre {
     // メニューを出したときに下にある普通のコンテンツを覆うようにする
     &.is-active {
       display: block;
-      position: absolute; 
+      position: fixed; 
       top: $height-header-tablet;
       left: 0rem;
       z-index: 100;
@@ -262,7 +262,7 @@ code, pre {
 
   @include media(tablet_phone) {
     text-align: left;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem;
   }
 }
 
